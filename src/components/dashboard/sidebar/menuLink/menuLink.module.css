@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 20px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 7px;
+}
+.container:hover,.active{
+    /* padding: 7px; */
+    background-color: gray;
+    cursor: pointer;
+    border-radius: 10px;
+}

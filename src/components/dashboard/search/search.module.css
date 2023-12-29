@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgb(28, 28, 143);
+    border-radius: 5px;
+    
+}
+.input{
+   background-color: transparent;
+   border: none;
+}
