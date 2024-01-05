@@ -1,93 +1,54 @@
 import React from "react";
 import styles from "@/components/dashboard/sidebar/sidebar.module.css";
 import Image from "next/image";
-import {
-  MdDashboard,
-  MdSupervisedUserCircle,
-  MdShoppingBag,
-  MdAttachMoney,
-  MdWork,
-  MdAnalytics,
-  MdPeople,
-  MdOutlineSettings,
-  MdHelpCenter,
-  MdLogout,
-} from "react-icons/md";
+import { MdDashboard, MdSupervisedUserCircle } from "react-icons/md";
 import MenuLinks from "./menuLink/MenuLink";
 const menuItems = [
   {
-    title: "Pages",
     list: [
       {
-        title: "Dashboard",
+        title: "Home",
+        path: "/",
+        icon: <MdDashboard />,
+      },
+      {
+        title: "My Space",
         path: "/dashboard",
         icon: <MdDashboard />,
       },
       {
-        title: "Users",
-        path: "/dashboard/users",
+        title: "Leave",
+        path: "/dashboard/leave",
         icon: <MdSupervisedUserCircle />,
       },
       {
-        title: "Products",
-        path: "/dashboard/products",
-        icon: <MdShoppingBag />,
+        title: "Attendence",
+        path: "/dashboard/attendance",
       },
       {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
-      },
-    ],
-  },
-  {
-    title: "Analytics",
-    list: [
-      {
-        title: "Revenue",
-        path: "/dashboard/revenue",
-        icon: <MdWork />,
+        title: "Performance",
+        path: "/dashboard/performance",
       },
       {
-        title: "Reports",
-        path: "/dashboard/reports",
-        icon: <MdAnalytics />,
+        title: "Expence &Travel",
+        path: "/dashboard/travel",
       },
       {
-        title: "Teams",
-        path: "/dashboard/teams",
-        icon: <MdPeople />,
-      },
-    ],
-  },
-  {
-    title: "User",
-    list: [
-      {
-        title: "Settings",
-        path: "/dashboard/settings",
-        icon: <MdOutlineSettings />,
-      },
-      {
-        title: "Help",
+        title: "Help Desk",
         path: "/dashboard/help",
-        icon: <MdHelpCenter />,
       },
     ],
   },
 ];
 
 const Sidebar = () => {
-  
   return (
-    <div className={styles.container}>
-      <div className={styles.user}>
-        <Image className={ styles.userImage} src="/noavatar.jpg" alt="avtar" height="50" width='50' />
-        <div className={styles.userDetail}>
-          <span className={styles.userName}>A Saad</span>
-          <span className={styles.userTitle}>Administator</span>
-        </div>
+    <div className="sticky top-10">
+      <div className="flex flex-col items-center justify-center gap-2 mb-8">
+        <h1 className="text-3xl font-bold">KDSIP</h1>
+        <span>Interior & Architecture</span>
       </div>
+      <hr />
       <ul>
         {menuItems.map((cat) => (
           <li key={cat.title}>
@@ -98,10 +59,6 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
-      <button className={styles.logout}>
-        <MdLogout/>
-        LogOut
-      </button>
     </div>
   );
 };
